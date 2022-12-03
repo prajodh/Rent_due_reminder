@@ -1,0 +1,171 @@
+{% load static %}
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Rent Due Reminder</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{% static '/css/main.css' %}" />
+		<link rel="icon" href="{% static '/css/favicon.ico' %}">
+		<noscript><link rel="stylesheet" href="{% static '/css/noscript.css' %}" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<h1><a href="index.html">Rent Due Reminder</a></h1>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					 <nav id="menu">
+						<div class="inner">
+							<h2>Menu</h2>
+							<ul class="links">
+								<li><a href="{% url 'home' %}">Home</a></li>
+								<li><a href="accounts/signup">Sign Up</a></li>
+								<li><a href="accounts/login" >Log In</a></li>
+								<!-- <li><a href="{% url 'generic' %}">Add Tenant</a></li> -->
+								<!-- <li><a href="elements.html">Elements</a></li> -->
+
+
+							</ul>
+							<a href="#" class="close">Close</a>
+						</div>
+					</nav>
+					<script>
+						function gotoBottom(id){
+   var element = document.getElementById(id);
+   element.scrollTop = element.scrollHeight - element.clientHeight;
+}
+					</script>
+
+				<!-- Banner -->
+					<section id="banner">
+						<div class="inner">
+							<div class="logo">
+								<i class="fa fa-home" style="font-size:30px"></i>
+
+							</div>
+
+
+           <!-- <div class="w3-xxlarge"><i class="fa fa-home"></i></div> -->
+
+							<!-- <div class="logo"><span class="icon fa-gem"></span></div> -->
+							<h2>Rent Due Reminder</h2>
+							<p>Ameliorating . Rent . Reminding</p>
+						</div>
+					</section>
+
+				<!-- Wrapper -->
+					<section id="wrapper">
+
+						<!-- One -->
+							<section id="one" class="wrapper spotlight style1">
+								<div class="inner">
+									<a href="#" class="image"><img src="{% static 'images/image3.jpg' %}" alt="" /></a>
+									<div class="content">
+										<h2 class="major">Introduction</h2>
+										<p>Our project is a take on reducing the toil put into the rent reminding process. It focuses on reducing the work done by the owner by automating it with the help of technology. Our project will give the tenants a gentle reminder asking them to pay the rent.
+</p>
+										<a href="#" class="special">Learn more</a>
+									</div>
+								</div>
+							</section>
+
+						<!-- Two -->
+							<section id="two" class="wrapper alt spotlight style2">
+								<div class="inner">
+									<a href="#" class="image"><img src="{% static 'images/blub.png' %}" alt="" /></a>
+									<div class="content">
+										<h2 class="major">Motivation</h2>
+										<p>  <i class="fas fa-cog fa-pulse"></i>	Reduce elbow grease going into the process by automating it.<br>
+  <i class="fas fa-cog fa-pulse"></i>	Build a project to make the rent reminding process less fiddly.<br>
+  	<i class="fas fa-cog fa-pulse"> </i>Build a healthy relationship between the owner and tenant.
+</p>
+										<a href="#" class="special">Learn more</a>
+									</div>
+								</div>
+							</section>
+
+						<!-- Three -->
+							<section id="three" class="wrapper spotlight style3">
+								<div class="inner">
+									<a href="#" class="image"><img src="{% static 'images/home1.jpg' %}" alt="" /></a>
+									<div class="content">
+										<h2 class="major">How to get started !!!</h2>
+										<p>
+<i class="fas fa-arrow-right"></i> login/signup <i class="fas fa-arrow-right"></i> add tenant <i class="fas fa-arrow-right"></i> provide necessary details <br><br>
+one less thing to do!!!
+
+
+</p>
+
+									</div>
+								</div>
+							</section>
+
+						<!-- Four -->
+
+
+				<!-- Footer -->
+					<section id="footer">
+						<div class="inner">
+							<!-- <h2 class="major">LOGIN</h2> -->
+							<!-- <form method="post" action="login">
+								{% csrf_token %}
+								<div class="fields">
+									<div class="field">
+										<label for="name">Username</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field">
+										<label for="email">Password</label>
+										<input type="password" name="email" id="email" />
+									</div>
+
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Submit" /></li>
+								</ul>
+							</form> -->
+							<ul class="contact">
+								<li class="icon solid fa-home">
+									 Doddaballapur Main Road,Avalahalli,<br>
+									  Yelahanka, Bengaluru,<br>
+										 Karnataka 560064
+								</li>
+								<li class="icon solid fa-phone">+91-70900607147</li>
+								<li class="icon solid fa-envelope"><a href="#">1by19cs109@bmsit.in <br> 1by19cs114@bmsit.in</a></li>
+								<!-- <li class="icon brands fa-twitter"><a href="#">twitter.com/untitled-tld</a></li>
+								<li class="icon brands fa-facebook-f"><a href="#">facebook.com/untitled-tld</a></li>
+								<li class="icon brands fa-instagram"><a href="#">instagram.com/untitled-tld</a></li> -->
+							</ul>
+							<ul class="copyright">
+								<li>&copy; Rent Due Reminder  Inc. All rights reserved.</li>
+							</ul>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="{% static '/js/jquery.min.js' %}"></script>
+			<script src="{% static '/js/jquery.scrollex.min.js' %}"></script>
+			<script src="{% static '/js/browser.min.js' %}"></script>
+			<script src="{% static '/js/breakpoints.min.js' %}"></script>
+			<script src="{% static '/js/util.js' %}"></script>
+			<script src="{% static '/js/main.js' %}"></script>
+
+	</body>
+</html>

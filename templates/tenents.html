@@ -1,0 +1,198 @@
+{% load static %}
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+  <title>your tenets</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="{% static '/css/main.css' %}" />
+  <link rel="icon" href="{% static '/css/favicon.ico' %}">
+  <noscript>
+    <link rel="stylesheet" href="{% static '/css/noscript.css' %}" />
+  </noscript>
+</head>
+
+<body class="is-preload">
+
+  <!-- Page Wrapper -->
+  <div id="page-wrapper">
+
+    <!-- Header -->
+    <header id="header">
+      
+      <h1><a href="index.html">Rent Due Reminder</a></h1>
+      <nav>
+        <a href="#menu">Menu</a>
+      </nav>
+    </header>
+
+    <!-- Menu -->
+    <nav id="menu">
+      <div class="inner">
+        <h2>Menu</h2>
+        <ul class="links">
+          <li><a href="{% url 'generic' %}">Add Tenant</a></li>
+          <li><a href="{% url 'home' %}">Log Out</a></li>
+								<!-- <li><a href="accounts/signup">Sign Up</a></li> -->
+								<!-- <li><a href="login">Log In</a></li> -->
+								
+          <!-- <li><a href="elements.html">Elements</a></li> -->
+        </ul>
+        <a href="#" class="close">Close</a>
+      </div>
+    </nav>
+
+ 
+    <section id="footer">
+      <div class="inner">
+        <section id="prajodh">
+          
+          <h2 class="major">your tenents</h2>
+        </section>
+        <h3>HELLO  {{username}}</h3>
+    
+    {% block content %}
+    <table style="width:100%">
+        <thead>
+          <th>NAME</th>
+          <th>AGE</th>
+          <th>DUE DATE</th>
+          <th>RENT AMOUNT</th>
+          <th>PHONE NUMBER</th>
+        </thead>  
+    {% for i in tlist %}
+    {% if i.username == username %}
+        <tr>
+          <td>{{i.name}}</td>
+          <td>{{i.age}}</td>
+          <td>{{i.due_date}}</td>
+          <td>{{i.rent_amount}}</td>
+          <td>{{i.tenent_phone}}</td>
+        </tr>
+      
+    <!-- <li>{{i.age}}</li>
+    <li>{{i.name}}</li>
+    <li>{{i.due_date}}</li> -->
+    {% endif %}
+    {% endfor %}
+    </table>
+    {% endblock %}
+        
+        <!-- {% include 'messages.html' %} -->
+        <!-- {% if messages %}
+        {% for message in messages %}
+          <div class="alert alert-{{ message.tags }} alert-dismissible text-center" role="alert" id ="msg">
+           <button type="button" id="msg" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span>
+           </button>
+            <strong>{% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Error{% else %}{{ message.tags|title }}{% endif %}!
+            </strong> {{ message }}
+            </div>
+        {% endfor %}
+        {% endif %}
+        
+
+        <h3>enter the details</h3>
+        
+        <form method="post" action="signup">
+          {% csrf_token %}
+          <div class="fields">
+            <div class="field">
+              <label for="Username">Username</label>
+              <input type="text" name="Username" id="Username" required>
+              
+            </div>
+            
+
+            <div class="field">
+              <label for="Firstname">Firstname</label>
+              <input type="text" name="Firstname" id="Firstname" required>
+            </div>
+            <div class="field">
+              <label for="Lastname">Lastname</label>
+              <input type="text" name="Lastname" id="Lastname" required>
+            </div>
+
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" name="email" id="email" required>
+            </div>
+            <div class="field">
+              <label for="password">Password</label>
+              <input type="password" name="password1" value="" required>
+            </div>
+            <div class="field">
+              <label for="password"> Confirm Password</label>
+              <input type="password" name="password2" value="" required>
+              
+            </div>
+
+
+          </div>
+          <ul class="actions">
+            <li><input type="submit" onclick="emessage()" value="Register" /></li>
+          </ul>
+          <script>
+            setTimeout(function(){
+              if($('#msg').length > 0){
+                $('#msg').remove();
+              }
+            },3000)
+          </script>
+        </form>
+        
+        <center>
+          {% for message in messages %}
+          <script>
+            function emessage(){
+              
+              alert("{{message}}")
+              window.print();
+              
+            }
+          </script>
+           {% endfor %}
+        </center> -->
+        <!-- <ul class="contact">
+          <li class="icon solid fa-home">
+            Doddaballapur Main Road,Avalahalli,<br>
+            Yelahanka, Bengaluru,<br>
+            Karnataka 560064
+          </li>
+          <li class="icon solid fa-phone">+91-70900607147</li>
+          <li class="icon solid fa-envelope"><a href="#">1by19cs109@bmsit.in <br> 1by19cs114@bmsit.in</a></li>
+          <li class="icon brands fa-twitter"><a href="#">twitter.com/untitled-tld</a></li>
+								<li class="icon brands fa-facebook-f"><a href="#">facebook.com/untitled-tld</a></li>
+								<li class="icon brands fa-instagram"><a href="#">instagram.com/untitled-tld</a></li>
+        </ul> -->
+        <ul class="copyright">
+          <li>&copy; Rent Due Reminder Inc. All rights reserved.</li>
+        </ul>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="{% static '/js/jquery.min.js' %}"></script>
+  <script src="{% static '/js/jquery.scrollex.min.js' %}"></script>
+  <script src="{% static '/js/browser.min.js' %}"></script>
+  <script src="{% static '/js/breakpoints.min.js' %}"></script>
+  <script src="{% static '/js/util.js' %}"></script>
+  <script src="{% static '/js/main.js' %}"></script>
+  <script>
+    setTimeout(function(){
+      if($('#msg').length > 0){
+        $('#msg').remove();
+      }
+    },3000)
+  </script> 
+
+</body>
+
+</html>
